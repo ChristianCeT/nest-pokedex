@@ -1,0 +1,14 @@
+# docker-compose up -d
+
+version: '3'
+
+services:
+  db:
+    image: mongo:5
+    restart: always
+    ports:
+      - 27017:27017 #puerto del computador y puerto del contenedor
+    environment:
+      MONGODB_DATABASE: nest-pokemon
+    volumes: #se especifica un volumen de espacio de disco duro de la computadora
+      - ./mongo:/data/db
